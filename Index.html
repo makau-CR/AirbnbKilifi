@@ -1,0 +1,745 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jumia Careers · Ride with us</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #f8fafc;
+      color: #0b1b2f;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* header */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: -0.5px;
+    }
+
+    .logo i {
+      color: #f68b1e;
+      font-size: 2rem;
+    }
+
+    .logo span {
+      color: #0b1b2f;
+    }
+
+    .logo small {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #5e6f88;
+      margin-left: 0.2rem;
+    }
+
+    .admin-link {
+      background: #eef2f6;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1e2b3c;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: 0.2s;
+    }
+
+    .admin-link:hover {
+      background: #d9e0e8;
+    }
+
+    /* hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .hero-text {
+      flex: 1 1 300px;
+    }
+
+    .hero-text .badge {
+      background: #fef1e6;
+      color: #f68b1e;
+      font-weight: 600;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      display: inline-block;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text h1 span {
+      color: #f68b1e;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #3e4e64;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .deadline-badge {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 100px;
+      padding: 0.6rem 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    }
+
+    .deadline-badge i {
+      color: #f68b1e;
+    }
+
+    .deadline-badge strong {
+      color: #0b1b2f;
+      margin-left: 0.2rem;
+    }
+
+    .hero-image {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 30px;
+      box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
+      aspect-ratio: 1/1;
+    }
+
+    /* cards / fee */
+    .fee-section {
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      border: 1px solid #edf2f7;
+    }
+
+    .fee-section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .fee-section h2 i {
+      color: #f68b1e;
+      margin-right: 0.5rem;
+    }
+
+    .fee-section > p {
+      color: #5e6f88;
+      margin-bottom: 1.8rem;
+    }
+
+    .fee-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .fee-card {
+      background: #f9fcff;
+      border: 1px solid #dfe7ef;
+      border-radius: 1.5rem;
+      padding: 1.5rem 2rem;
+      flex: 1 1 180px;
+      text-align: center;
+    }
+
+    .fee-card .price {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #0b1b2f;
+    }
+
+    .fee-card .price small {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #5e6f88;
+    }
+
+    .fee-card .label {
+      font-size: 0.9rem;
+      color: #5e6f88;
+      margin-top: 0.25rem;
+    }
+
+    .fee-note {
+      background: #f0f7ff;
+      border-left: 4px solid #f68b1e;
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      color: #1e2b3c;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .fee-note i {
+      color: #f68b1e;
+      font-size: 1.2rem;
+    }
+
+    .apply-button {
+      background: #f68b1e;
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      box-shadow: 0 12px 20px -8px rgba(246, 139, 30, 0.4);
+      margin-top: 1.5rem;
+    }
+
+    .apply-button:hover {
+      background: #e07a0e;
+      transform: scale(1.02);
+    }
+
+    /* payment modal / section */
+    .payment-section {
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 2px dashed #f68b1e;
+      text-align: center;
+      display: none;
+    }
+
+    .payment-section.active {
+      display: block;
+    }
+
+    .payment-section h3 {
+      font-size: 1.7rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .mpesa-number {
+      background: #0b1b2f;
+      color: white;
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      display: inline-block;
+      margin: 1.2rem 0;
+    }
+
+    .payment-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      text-align: left;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .step i {
+      background: #fef1e6;
+      color: #f68b1e;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 1.2rem;
+    }
+
+    .btn-confirm {
+      background: #0b1b2f;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 1rem;
+    }
+
+    .btn-confirm:hover {
+      background: #1e2b3c;
+    }
+
+    /* application form */
+    .application-section {
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid #edf2f7;
+      display: none;
+    }
+
+    .application-section.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      border-radius: 60px;
+      border: 1px solid #d0dae8;
+      font-size: 1rem;
+      background: #f9fcff;
+      transition: 0.2s;
+    }
+
+    .form-group input:focus {
+      outline: 2px solid #f68b1e;
+      border-color: transparent;
+    }
+
+    .btn-submit-app {
+      background: #f68b1e;
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: 60px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1.1rem;
+    }
+
+    /* images row */
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 3rem 0;
+      justify-content: center;
+    }
+
+    .image-card {
+      flex: 1 1 200px;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      transition: 0.2s;
+      background: #eef2f6;
+      aspect-ratio: 1/1;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .location-tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: #0b1b2f;
+      color: white;
+      padding: 0.7rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 500;
+      margin: 2rem auto;
+      width: fit-content;
+    }
+
+    .contact-mail {
+      text-align: center;
+      margin: 2rem 0 3rem;
+      font-size: 0.95rem;
+      color: #5e6f88;
+    }
+
+    .contact-mail a {
+      color: #f68b1e;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* admin page */
+    .admin-page {
+      display: none;
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid #edf2f7;
+    }
+
+    .admin-page.active {
+      display: block;
+    }
+
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .admin-table th {
+      text-align: left;
+      padding: 0.8rem 0.4rem;
+      background: #f2f6fb;
+      border-radius: 30px;
+    }
+
+    .admin-table td {
+      padding: 0.8rem 0.4rem;
+      border-bottom: 1px solid #e9f0f6;
+    }
+
+    .status-paid {
+      color: #0f8b4b;
+      font-weight: 600;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* responsive */
+    @media (max-width: 640px) {
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+      .fee-card .price {
+        font-size: 1.8rem;
+      }
+      .mpesa-number {
+        font-size: 1.5rem;
+        padding: 0.6rem 1rem;
+      }
+      .admin-table {
+        font-size: 0.8rem;
+      }
+    }
+
+    /* misc */
+    .divider {
+      height: 1px;
+      background: #e2e8f0;
+      margin: 2rem 0;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <div class="logo">
+        <i class="fas fa-motorcycle"></i>
+        <span>Jumia<span style="color:#f68b1e;">Careers</span></span>
+      </div>
+      <a href="#" class="admin-link" id="adminNavLink"><i class="fas fa-lock"></i> Admin</a>
+    </div>
+
+    <!-- MAIN PAGE (CAREERS) -->
+    <div id="mainPage">
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-text">
+          <div class="badge"><i class="fas fa-bolt"></i> Now hiring · Eldoret</div>
+          <h1>Ride with <span>Jumia</span>.<br>Earn more.</h1>
+          <p>Join our dynamic team of riders and customer care champions. Apply today and start your journey with Kenya's leading e-commerce platform.</p>
+          <div class="deadline-badge">
+            <i class="fas fa-hourglass-half"></i>
+            Application deadline: <strong>30 April 2025</strong>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop" alt="Jumia rider on motorbike">
+        </div>
+      </div>
+
+      <!-- FEE / PAYMENT CARD -->
+      <div class="fee-section" id="feeSection">
+        <h2><i class="fas fa-receipt"></i> Application fee</h2>
+        <p>To ensure seriousness, a small commitment fee is required. Choose your category.</p>
+        <div class="fee-options">
+          <div class="fee-card">
+            <div class="price">500 <small>Ksh</small></div>
+            <div class="label">Customer Care</div>
+          </div>
+          <div class="fee-card">
+            <div class="price">850 <small>Ksh</small></div>
+            <div class="label">Rider / Delivery</div>
+          </div>
+        </div>
+        <div class="fee-note">
+          <i class="fas fa-info-circle"></i>
+          <span>Pay via M-Pesa to <strong>0715421626</strong>. After payment, you'll receive a confirmation email with your application link.</span>
+        </div>
+        <button class="apply-button" id="applyNowBtn"><i class="fas fa-paper-plane"></i> Apply now · Pay & continue</button>
+      </div>
+
+      <!-- PAYMENT SECTION (hidden initially) -->
+      <div class="payment-section" id="paymentSection">
+        <h3><i class="fas fa-mobile-alt" style="color:#f68b1e;"></i> Complete payment</h3>
+        <p>Send the application fee to the M-Pesa number below</p>
+        <div class="mpesa-number">0715421626</div>
+        <div class="payment-steps">
+          <div class="step"><i class="fas fa-1"></i> Go to M-Pesa menu</div>
+          <div class="step"><i class="fas fa-2"></i> Send money to 0715421626</div>
+          <div class="step"><i class="fas fa-3"></i> Enter amount (500 or 850)</div>
+        </div>
+        <button class="btn-confirm" id="confirmPaymentBtn"><i class="fas fa-check-circle"></i> I have paid – send confirmation</button>
+        <p style="font-size:0.85rem; color:#5e6f88; margin-top:1.5rem;"><i class="fas fa-envelope"></i> A confirmation email will be sent to you with the application link.</p>
+      </div>
+
+      <!-- APPLICATION FORM (hidden initially) -->
+      <div class="application-section" id="applicationSection">
+        <h3 style="margin-bottom:1.5rem;"><i class="fas fa-file-alt" style="color:#f68b1e;"></i> Application form</h3>
+        <form id="applicationForm">
+          <div class="form-group">
+            <label>Full name</label>
+            <input type="text" placeholder="e.g. John Kamau" required>
+          </div>
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label>Phone number</label>
+            <input type="tel" placeholder="07XX XXX XXX" required>
+          </div>
+          <div class="form-group">
+            <label>Position applied for</label>
+            <select required>
+              <option value="">Select position</option>
+              <option>Customer Care (500 Ksh fee)</option>
+              <option>Rider (850 Ksh fee)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit-app"><i class="fas fa-check"></i> Submit application</button>
+        </form>
+      </div>
+
+      <!-- IMAGE GALLERY (riders & customer care) -->
+      <div class="image-gallery">
+        <div class="image-card">
+          <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1000&auto=format&fit=crop" alt="Jumia rider smiling">
+        </div>
+        <div class="image-card">
+          <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=1000&auto=format&fit=crop" alt="Customer care representative">
+        </div>
+        <div class="image-card">
+          <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=1000&auto=format&fit=crop" alt="Delivery rider on the road">
+        </div>
+      </div>
+
+      <!-- location & contact -->
+      <div class="location-tag">
+        <i class="fas fa-map-pin"></i> Eldoret, Kenya
+      </div>
+      <div class="contact-mail">
+        <i class="fas fa-envelope"></i> Contact: <a href="mailto:tbxagency.africa@gmail.com">tbxagency.africa@gmail.com</a>
+      </div>
+    </div> <!-- end mainPage -->
+
+    <!-- ADMIN PAGE (hidden, accessible via /admin) -->
+    <div id="adminPage" class="admin-page">
+      <div class="admin-header">
+        <h2><i class="fas fa-shield-alt" style="color:#f68b1e;"></i> Admin dashboard</h2>
+        <button id="backToMain" class="admin-link" style="background:#eef2f6;"><i class="fas fa-arrow-left"></i> Back to site</button>
+      </div>
+      <p style="margin-bottom:1.5rem; color:#5e6f88;">Applications received (paid). Password: 0000</p>
+      <table class="admin-table">
+        <thead>
+          <tr><th>Name</th><th>Email</th><th>Position</th><th>Fee</th><th>Status</th></tr>
+        </thead>
+        <tbody id="adminTableBody">
+          <tr><td>Mary Wanjiku</td><td>mary@example.com</td><td>Rider</td><td>850 Ksh</td><td class="status-paid">Paid</td></tr>
+          <tr><td>Brian Ochieng</td><td>brian@example.com</td><td>Customer Care</td><td>500 Ksh</td><td class="status-paid">Paid</td></tr>
+          <tr><td>Faith Chebet</td><td>faith@example.com</td><td>Rider</td><td>850 Ksh</td><td class="status-paid">Paid</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:2rem; padding:1rem; background:#fef1e6; border-radius:1rem;">
+        <i class="fas fa-clock"></i> Deadline: 30 April 2025 · 11:59 PM
+      </div>
+    </div>
+
+  </div> <!-- end container -->
+
+  <script>
+    (function() {
+      // DOM elements
+      const applyNowBtn = document.getElementById('applyNowBtn');
+      const paymentSection = document.getElementById('paymentSection');
+      const applicationSection = document.getElementById('applicationSection');
+      const feeSection = document.getElementById('feeSection');
+      const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
+      const adminNavLink = document.getElementById('adminNavLink');
+      const mainPage = document.getElementById('mainPage');
+      const adminPage = document.getElementById('adminPage');
+      const backToMain = document.getElementById('backToMain');
+      const applicationForm = document.getElementById('applicationForm');
+
+      // Check URL for /admin path (simulated)
+      function checkAdminPath() {
+        const path = window.location.pathname;
+        // if path ends with /admin or includes /admin, show admin page (but password required)
+        if (path === '/admin' || path.endsWith('/admin') || path.includes('/admin')) {
+          // request password
+          const pwd = prompt('Enter admin password:');
+          if (pwd === '0000') {
+            showAdminPage();
+          } else {
+            alert('Access denied. Incorrect password.');
+            // redirect to main
+            window.location.href = '/';
+          }
+        } else {
+          // show main page, hide admin
+          mainPage.style.display = 'block';
+          adminPage.classList.remove('active');
+        }
+      }
+
+      function showAdminPage() {
+        mainPage.style.display = 'none';
+        adminPage.classList.add('active');
+      }
+
+      function showMainPage() {
+        mainPage.style.display = 'block';
+        adminPage.classList.remove('active');
+        // reset payment & application visibility if needed
+        paymentSection.classList.remove('active');
+        applicationSection.classList.remove('active');
+      }
+
+      // admin nav link (with password prompt)
+      adminNavLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const pwd = prompt('Enter admin password:');
+        if (pwd === '0000') {
+          showAdminPage();
+          // update URL to /admin (optional but nice)
+          history.pushState({}, '', '/admin');
+        } else {
+          alert('Incorrect password.');
+        }
+      });
+
+      // back to main
+      backToMain.addEventListener('click', () => {
+        showMainPage();
+        history.pushState({}, '', '/');
+      });
+
+      // apply button → show payment section, hide fee?
+      applyNowBtn.addEventListener('click', () => {
+        // show payment section
+        paymentSection.classList.add('active');
+        // scroll to payment
+        paymentSection.scrollIntoView({ behavior: 'smooth' });
+        // optionally hide the fee section? we keep it
+      });
+
+      // confirm payment (simulate payment and email confirmation)
+      confirmPaymentBtn.addEventListener('click', () => {
+        // simulate sending email and opening application link
+        alert('✅ Payment confirmed! A confirmation email with your application link has been sent. You can now proceed to the application form.
